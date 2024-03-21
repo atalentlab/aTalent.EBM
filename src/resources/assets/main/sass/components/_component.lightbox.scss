@@ -1,0 +1,275 @@
+//---------------------------------------------------------
+// #Lightbox
+//---------------------------------------------------------
+
+
+// Index
+// - Lightbox
+
+
+//---------------------------------------------------------
+// #lightbox
+//---------------------------------------------------------
+
+// body class
+.lightbox-lite-open {
+  overflow: hidden;
+}
+
+// lightbox-lite overlay
+.lightbox-lite {
+  position: fixed;
+  top: -500%;
+  width: 0;
+  height: 0;
+  background: rgba(color(black), .7);
+  opacity: 0;
+  //overflow: hidden;
+  z-index: -10;
+  // hide lightbox-lite overlay transition - we need to put a delay on the top, otherwise the opacity
+  // animation won't be visible
+  @include transition(0s 0.5s width, 0s 0.5s height, 0s 0.5s z-index, 0s 0.5s top, 0.5s opacity);
+
+  &.lightbox-lite-box-open {
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    opacity: 1;
+    top: 0 !important;
+    left: 0;
+    // show lightbox-lite overlay transition, only animate the opacity
+    @include transition(0s width, 0s height, 0s z-index, 0s top, 0.5s opacity);
+
+    > .lightbox-lite__box {
+      top: 50%;
+      left: 50%;
+      @include transition(0s left, top .5s);
+      border-radius: 5px;
+    }
+  }
+
+  &.is-loading, &.has-feedback {
+    .lightbox-lite-content-placeholder {
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        background: rgba(color(white), 0.8) no-repeat center center;
+      }
+    }
+  }
+
+  &.is-loading {
+    > .lightbox-lite__box {
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        background: url(image-url('loading.gif')) no-repeat center center;
+        background-size: 100px 100px;
+      }
+    }
+  }
+}
+
+// lightbox-lite
+.lightbox-lite__box {
+  max-height: 90%;
+  //min-height: 40%;
+  margin: auto;
+  position: fixed;
+  background: color(white);
+  top: 100%;
+  left: -200%;
+  height: auto;
+  width: 90%;
+  padding: 55px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  z-index: 4;
+  -webkit-font-smoothing: antialiased;
+  @include transform(translate(-50%, -50%));
+  @include transition(0s 0.5s left, top .5s,max-height 0.5s,height 0.5s);
+  -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow:    0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+  box-shadow:         0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+  color: color(black);
+  @include flex-font-size(15px, 1.3);
+
+  @media(max-width: 768px) {
+    padding: 40px 20px;
+    width: 95%;
+  }
+}
+
+.lightbox-lite__box--no-padding {
+  padding: 0 !important;
+}
+
+.lightbox-lite__box--m {
+  width: 70%;
+  padding: 40px 90px;
+
+  @media(max-width: 1240px) {
+    padding: 30px 50px;
+    width: 75%;
+  }
+
+  @media(max-width: 768px) {
+    padding: 30px 20px;
+    width: 95%;
+  }
+}
+
+.lightbox-lite__box--s {
+  width: 45%;
+  padding: 55px 110px;
+  max-width: 700px;
+
+  @media(max-width: 1040px) {
+    width: 50%;
+    padding: 40px 50px;
+    max-width: none;
+  }
+
+  @media(max-width: 650px) {
+    padding: 45px 20px;
+    width: 95%;
+  }
+}
+
+.lightbox-lite__box__loading {
+  padding-bottom: 35%;
+  background: url(image-url('loading.gif')) no-repeat center center #fff;
+  background-size: 90px 90px;
+}
+
+.lightbox-lite__box-inner {
+  position: relative;
+}
+
+.lightbox-lite-content-placeholder {
+
+  //padding: 20px 0;
+
+
+}
+
+.lightbox-lite__feedback {
+  position: absolute;
+  top: 25%;
+  //@include transform(transateY(-30%));
+  opacity: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  text-align: center;
+  z-index: -1;
+  @include flex-font-size(24px, 1.2);
+  display: none;
+  //@include transition(0s .3s width, 0s .3s height, 0s .3s z-index, .3s background-color);
+
+  .has-feedback & {
+    z-index: 2;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    display: block;
+    //@include transition(0s width, 0s height, 0s z-index, .3s background-color);
+  }
+}
+
+.lightbox-lite-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 3;
+  font-size: 16px;
+  line-height: 16px;
+  color: color(red);
+  @include opacity(.8);
+  padding: 15px;
+  @include transition(.3s all);
+  @include transform(translate3d(0,0,0));
+  // prevent other elements from moving when doing the animation
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);
+
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+
+
+  .no-touchevents &:hover, .no-touchevents &:active {
+    // rotate the close button on hover
+    @include transform(rotate(-180deg));
+  }
+}
+
+
+
+//Profile Edit Page Lightbox
+.lightbox--profile{
+
+  .lightbox-lite__box--m {
+    padding: 20px;
+    width: 500px;
+    min-height: auto;
+    @media(max-width: 1240px) {
+      padding: 20px;
+    }
+
+    @include media-query('phone-large'){
+      padding: 20px;
+      width: 95%;
+    }
+  }
+
+}
+
+
+.share-lightbox,.wechat-follow-lightbox{
+  .lightbox-lite__box--s{
+    width: 400px;
+    text-align: center;
+    transition: height 0.3s;
+    padding: 15px 55px 55px;
+    @include media-query('phone'){
+      width: 100%;
+    }
+  }
+  .social-back{
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 16px;
+    color: red;
+    @include opacity(0.7);
+    font-weight: 800;
+  }
+
+  .share-title{
+    position: relative;
+    top: 0;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+}
+
+.wechat-follow-lightbox{
+  .lightbox-lite__box--s{
+    padding: 30px 20px 25px;
+  }
+}

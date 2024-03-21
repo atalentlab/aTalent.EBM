@@ -1,0 +1,71 @@
+/** =================== MONTSERRAT =================== **/
+
+/** Montserrat Light **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 300;
+  font-style: normal;
+  src: url(font-url('montserrat/Montserrat-Light.eot'));
+  src: url(font-url('montserrat/Montserrat-Light.eot?#iefix')) format('embedded-opentype'),
+  url(font-url('montserrat/Montserrat-Light.woff2')) format("woff2"),
+  url(font-url('montserrat/Montserrat-Light.woff')) format("woff");
+}
+
+
+/** Montserrat Regular **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-style: normal;
+  src: url(font-url('montserrat/Montserrat-Regular.eot'));
+  src: url(font-url('montserrat/Montserrat-Regular.eot?#iefix')) format('embedded-opentype'),
+  url(font-url('montserrat/Montserrat-Regular.woff2')) format("woff2"),
+  url(font-url('montserrat/Montserrat-Regular.woff')) format("woff");
+}
+
+
+/** Montserrat Medium **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-style: normal;
+  src: url(font-url('montserrat/Montserrat-Medium.eot'));
+  src: url(font-url('montserrat/Montserrat-Medium.eot?#iefix')) format('embedded-opentype'),
+  url(font-url('montserrat/Montserrat-Medium.woff2')) format("woff2"),
+  url(font-url('montserrat/Montserrat-Medium.woff')) format("woff");
+}
+
+
+
+/** Montserrat SemiBold **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-style: normal;
+  src: url(font-url('montserrat/Montserrat-SemiBold.eot'));
+  src: url(font-url('montserrat/Montserrat-SemiBold.eot?#iefix')) format('embedded-opentype'),
+  url(font-url('montserrat/Montserrat-SemiBold.woff2')) format("woff2"),
+  url(font-url('montserrat/Montserrat-SemiBold.woff')) format("woff");
+}
+
+/** Montserrat Bold **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-style: normal;
+  src: url(font-url('montserrat/Montserrat-Bold.eot'));
+  src: url(font-url('montserrat/Montserrat-Bold.eot?#iefix')) format('embedded-opentype'),
+  url(font-url('montserrat/Montserrat-Bold.woff2')) format("woff2"),
+  url(font-url('montserrat/Montserrat-Bold.woff')) format("woff");
+}
+
+/** Montserrat ExtraBold **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 800;
+  font-style: normal;
+  src: url(font-url('montserrat/Montserrat-ExtraBold.eot'));
+  src: url(font-url('montserrat/Montserrat-ExtraBold.eot?#iefix')) format('embedded-opentype'),
+  url(font-url('montserrat/Montserrat-ExtraBold.woff2')) format("woff2"),
+  url(font-url('montserrat/Montserrat-ExtraBold.woff')) format("woff");
+}

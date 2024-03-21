@@ -1,0 +1,498 @@
+//---------------------------------------------------------
+// #Typography
+//---------------------------------------------------------
+
+// Index
+// - Typography Settings
+// - Typography Base
+
+
+//---------------------------------------------------------
+// #Typography Settings
+//---------------------------------------------------------
+
+@mixin text-xxxl {
+  @include flex-font-size(48px, 1.2);
+
+  @include media-query('desktop-small') {
+    @include flex-font-size(40px, 1.2);
+  }
+
+  @include media-query('tablet') {
+    @include flex-font-size(32px, 1.2);
+  }
+
+  @include media-query('phone') {
+    @include flex-font-size(28px, 1.2);
+  }
+}
+
+
+
+@mixin text-xxl {
+  @include flex-font-size(36px, 1.2);
+
+  @include media-query('tablet') {
+    @include flex-font-size(32px, 1.2);
+  }
+
+  @include media-query('phone') {
+    @include flex-font-size(28px, 1.2);
+  }
+}
+
+@mixin text-xl {
+  @include flex-font-size(28px, 1.2);
+
+  @include media-query('tablet') {
+    @include flex-font-size(26px, 1.2);
+  }
+
+  @include media-query('phone') {
+    @include flex-font-size(24px, 1.2);
+  }
+}
+
+@mixin text-l {
+  @include flex-font-size(24px, 1.2);
+
+  @include media-query('tablet') {
+    @include flex-font-size(22px, 1.2);
+  }
+}
+
+@mixin text-m {
+  @include flex-font-size(18px, 1.3);
+}
+
+@mixin text-s {
+  @include flex-font-size(17px, 1.3);
+}
+
+@mixin text-xs {
+  @include flex-font-size(16px, 1.4);
+  .zh &{
+    @include flex-font-size(18px, 1.4);
+  }
+}
+
+@mixin text-xxs {
+  @include flex-font-size(15px, 1.5);
+}
+
+@mixin text-xxxs {
+  @include flex-font-size(14px, 1.6);
+  @include media-query('tablet'){
+    @include flex-font-size(12px, 1.6);
+  }
+  .zh &{
+    @include flex-font-size(16px, 1.6);
+    @include media-query('tablet'){
+      @include flex-font-size(14px, 1.6);
+    }
+  }
+}
+
+@mixin text-xxxxs {
+  @include flex-font-size(12px, 1.6);
+}
+
+@mixin text-serif {
+  font-family: $font-avenir;
+}
+
+@mixin text-sans-serif {
+  font-family: $font-avenir;
+}
+
+//---------------------------------------------------------
+// Typography Styles
+//---------------------------------------------------------
+
+html {
+  font-size: ($flex-base-font-size / 16px) * 1em; /* [1] */
+  line-height: $flex-base-line-height / $flex-base-font-size; /* [1] */
+  background-color: $flex-base-background-color;
+  color: $flex-base-text-color;
+  font-family: $font-avenir;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  //text-rendering: optimizeLegibility;
+  font-weight: normal;
+}
+
+//h1{
+//  font-size: 48px;
+//  letter-spacing: -2px;
+//  @include media-query(tablet){
+//    font-size: 32px;
+//    letter-spacing: -1px;
+//  }
+//}
+
+em {
+  // font-weight: bold;
+  font-style: italic;
+}
+
+hr {
+  margin: 3em 0;
+  padding: 0;
+  border: none;
+  border-top: 1px solid #ddd;
+  color: #eee;
+  text-align: center;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted $flex-base-text-color;
+}
+
+pre {
+  display: block;
+  padding: 15px;
+  font-size: .9em;
+  white-space: pre-line;
+  line-height: 1.6;
+  font-family: arial, sans-serif;
+  color: #fff;
+  background: $flex-base-text-color;
+}
+
+blockquote {
+  position: relative;
+  quotes: "“" "”" "‘" "’";
+}
+
+cite {
+  display: inline-block;
+}
+
+p {
+  margin: 0 0 0 0;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+::selection {
+  background-color: color(red);
+  color: color(white);
+}
+
+// font
+
+.text--serif {
+  @include text-serif;
+}
+
+.text--sans-serif {
+  @include text-sans-serif;
+}
+
+// font style
+
+.text--normal {
+  font-weight: 400;
+}
+
+.text--medium {
+  font-weight: 500;
+}
+
+.text--black {
+  font-weight: 800;
+}
+
+.text--center {
+  text-align: center;
+}
+
+.text--justify {
+  text-align: justify;
+}
+
+.text--left {
+  text-align: left;
+}
+
+.text--right {
+  text-align: right;
+}
+
+// size
+
+.text--xxxl {
+  @include text-xxxl;
+}
+
+.text--xxl {
+  @include text-xxl;
+}
+
+.text--xl {
+  @include text-xl;
+}
+
+.text--l {
+  @include text-l;
+}
+
+.text--m {
+  @include text-m;
+}
+
+.text--s {
+  @include text-s;
+}
+
+.text--xs {
+  @include text-xs;
+}
+
+.text--xxs {
+  @include text-xxs;
+}
+
+.text--xxxs {
+  @include text-xxxs;
+}
+
+.text--xxxxs {
+  @include text-xxxxs;
+}
+
+// appearance
+
+.text--strong {
+  //font-weight: bold;
+  font-weight: 800;
+}
+
+.text--emph {
+  font-style: italic;
+}
+
+.text--caps {
+  text-transform: uppercase;
+}
+
+// colors
+
+
+.text--white {
+  color: color(white);
+}
+
+.text--red {
+  color: color(red);
+}
+
+.text--muted {
+  color: color(grey) !important;
+}
+
+.text--grey{
+  color: color(greyDark)
+}
+
+.text--green {
+  color: color(green);
+}
+
+.text--purple {
+  color: color(purple);
+}
+
+.text--purple-medium {
+  color: color(purpleMedium);
+}
+
+.text--purple-light {
+  color: color(purpleLight);
+}
+
+/*.text--body {
+  color: color(greyDarkestest);
+}
+
+.text--muted {
+  color: color(greyDarkest);
+}
+
+
+.text--highlighted {
+  color: color(yellow);
+}
+
+.text--dark {
+  color: color(blueDarker);
+}
+
+.text--darker {
+  color: color(blueDarkest);
+}
+
+.text--darkest {
+  color: color(blueDarkestest);
+}*/
+
+// shadow
+
+.text--shadow-m {
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+// combinations
+
+
+.text--serif--xxl {
+  @extend .text--serif;
+  @extend .text__header;
+}
+
+.text--serif--xxl--emph {
+  @extend .text--serif;
+  @extend .text--xxl;
+  @extend .text--emph;
+}
+
+.text--serif--l {
+  @extend .text--serif;
+  @extend .text--l;
+}
+
+.text--serif--xl {
+  @extend .text--serif;
+ // @extend .text--xl;
+  @extend .text__header-2;
+}
+
+.text--serif--l--emph {
+  @extend .text--serif;
+  @extend .text--l;
+  @extend .text--emph;
+}
+
+.text--sans-serif--medium--xxxs {
+  @extend .text--sans-serif;
+  @extend .text--medium;
+  @extend .text--xxxs;
+}
+
+.text--sans-serif--black {
+  @extend .text--sans-serif;
+  @extend .text--black;
+}
+
+.text--sans-serif--medium {
+  @extend .text--sans-serif;
+  @extend .text--medium;
+}
+
+
+.text--sans-serif--black--xxxs {
+  @extend .text--sans-serif;
+  @extend .text--black;
+  @extend .text--xxxs;
+}
+
+.text--sans-serif--medium--l {
+  @extend .text--sans-serif;
+  @extend .text--medium;
+  @extend .text--l;
+}
+
+.text--sans-serif--black--l {
+  @extend .text--sans-serif;
+  @extend .text--black;
+  @extend .text--l;
+}
+
+.text--sans-serif--medium--s {
+  @extend .text--sans-serif;
+  @extend .text--medium;
+  @extend .text--s;
+}
+
+// separate
+
+.subtitle {
+  @extend .text--l;
+  @extend .text--black;
+  margin-bottom: 30px !important;
+
+  @include media-query('phone') {
+    @include flex-font-size(20px, 1.2);
+  }
+}
+
+
+
+//custom
+
+.text__header{
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1;
+  @include media-query(tablet){
+    font-size: 36px;
+    letter-spacing: -1px;
+    line-height: 1.2;
+  }
+  @include media-query(phone-large){
+    font-size: 32px;
+    letter-spacing: -1px;
+  }
+}
+
+.text__header-2{
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1;
+  @include media-query(tablet){
+    font-size: 32px;
+    letter-spacing: -1px;
+    line-height: 1.2;
+  }
+  @include media-query(phone-large){
+    font-size: 26px;
+    letter-spacing: -1px;
+  }
+}
+
+.text-no-break--responsive{
+  white-space: nowrap;
+  @include media-query('tablet-landscape'){
+    white-space: unset;
+  }
+}
+
+
+.title-text{
+  font-family: $font-avenir-b;
+}
+
+.text--description{
+  font-weight: normal;
+  line-height: 24px;
+  @include media-query('tablet'){
+    line-height: 1.6;
+  }
+}
+
+@include media-query('tablet'){
+  .text--center__responsive{
+    text-align: center;
+  }
+}
+
+
+.text--italic{
+  font-style: italic;
+}

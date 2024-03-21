@@ -1,0 +1,82 @@
+//---------------------------------------------------------
+// #Nestable
+//---------------------------------------------------------
+
+@import "~nestable2/jquery.nestable.scss";
+
+.dd {
+    max-width: none;
+}
+
+.dd-list {
+
+}
+
+.dd-item {
+    > button {
+        margin: 0 0 0 75px;
+        height: 63px;
+        outline: none;
+        z-index: 1;
+        font-size: 20px;
+        line-height: 1;
+        font-weight: normal;
+
+        &:before {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+    }
+}
+
+.dd-handle {
+    cursor: grab;
+    position: absolute;
+    margin: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 64px;
+    height: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    border: none;
+    border-right: 1px solid rgba(101, 109, 119, 0.16);
+    border-radius: 0;
+    transition: all .3s;
+    z-index: 1;
+
+    > i {
+        font-size: 28px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.dd-content {
+    position: relative;
+    margin: 5px 0;
+    border: 1px solid rgba(101, 109, 119, 0.16);
+
+    &.disabled {
+        .dd-handle {
+            cursor: default;
+
+            &:hover {
+                color: #333;
+            }
+        }
+    }
+
+    > .card-header {
+        margin-left: 50px;
+        border-bottom: none;
+    }
+}
+
+.dd-dragel {
+    cursor: grabbing;
+}

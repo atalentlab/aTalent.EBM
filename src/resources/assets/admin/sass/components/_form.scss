@@ -1,0 +1,126 @@
+//
+// Components - Form
+// --------------------------------------------------
+
+//
+// Toggle
+// --------------------------------------------------
+
+.custom-switch {
+    padding-left: 0;
+}
+
+//
+// Validation
+// --------------------------------------------------
+
+.form-group {
+
+    &.is-invalid {
+        .form-control:not(.selectize), .selectize-input {
+            border-color: #cd201f;
+            padding-right: calc(1.6em + 0.75rem);
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23cd201f' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23cd201f' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center right calc(0.4em + 0.1875rem);
+            background-size: calc(0.8em + 0.375rem) calc(0.8em + 0.375rem);
+        }
+
+        .custom-switch-indicator, .custom-file-label {
+            border-color: #cd201f;
+        }
+
+        .invalid-feedback {
+            display: block;
+        }
+    }
+
+    &.is-valid {
+        .form-control:not(.selectize), .selectize-input {
+            border-color: #5eba00;
+            padding-right: calc(1.6em + 0.75rem);
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%235eba00' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: center right calc(0.4em + 0.1875rem);
+            background-size: calc(0.8em + 0.375rem) calc(0.8em + 0.375rem);
+        }
+
+        .custom-switch-indicator, .custom-file-label {
+            border-color: #5eba00;
+        }
+    }
+
+    &.is-valid, &.is-invalid {
+        textarea.form-control {
+            padding-right: calc(1.6em + 0.75rem);
+            background-position: top calc(0.4em + 0.1875rem) right calc(0.4em + 0.1875rem);
+        }
+
+        .selectize-input:after {
+            display: none;
+        }
+    }
+}
+
+//
+// File upload
+// --------------------------------------------------
+
+.custom-file-preview {
+    img {
+        max-height: 200px;
+    }
+}
+
+//
+// Selectize
+// --------------------------------------------------
+
+// stop remote selectize box from jumping around in width
+.selectize-input.not-full {
+    > input[type="select-one"] {
+        width: 100% !important;
+        left: auto !important;
+    }
+}
+
+//
+// Radio plain
+// --------------------------------------------------
+
+.radio-plain {
+    display: block;
+    cursor: pointer;
+
+    > span {
+        display: flex;
+        padding: 5px;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color .3s;
+
+        > i {
+            transition: color .3s;
+            color: transparent;
+        }
+    }
+
+    > input {
+        display: none;
+        visibility: hidden;
+    }
+
+    > input:checked ~ span {
+        background: $primary;
+        color: $white;
+
+        > i {
+            color: $white;
+        }
+    }
+
+    > input:not(:checked) ~ span:hover {
+        color: rgba(0, 0, 0, 0.9);
+    }
+}
+

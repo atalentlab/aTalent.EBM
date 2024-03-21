@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="801px" height="801px" viewBox="0 0 801 801" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55 (78076) - https://sketchapp.com -->
+    <title>Oval Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-9.3%" y="-9.3%" width="118.6%" height="118.6%" filterUnits="objectBoundingBox" id="filter-1">
+            <feGaussianBlur stdDeviation="21.6" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="FINAL-DESIGNS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.710445804" opacity="0.8">
+        <g id="SRM-LandingPage-v3" transform="translate(-585.000000, -1594.000000)" fill="#36235F">
+            <g id="SRM-INDEX" transform="translate(-79.782369, 2.000000)">
+                <circle id="Oval-Copy" filter="url(#filter-1)" transform="translate(1065.282369, 1992.500000) rotate(-80.000000) translate(-1065.282369, -1992.500000) " cx="1065.28237" cy="1992.5" r="347.5"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

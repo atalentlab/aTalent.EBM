@@ -1,0 +1,60 @@
+//---------------------------------------------------------
+// Typography & color
+//---------------------------------------------------------
+// Default 'font-size' and 'line-height' for the entire project,
+// The `font-size` is calculated to exist in ems, the `line-height`
+// is calculated to exist unitlessly.
+$flex-base-text-color:		   #fff !default;
+$flex-base-background-color:   #000 !default;
+$flex-base-font-size:		   16px !default;
+$flex-base-line-height:		   24px !default;
+
+$font-avenir:     "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-avenir-b:     "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+
+
+//---------------------------------------------------------
+// Colors
+//---------------------------------------------------------
+$colors: (
+        black           : #000000,
+        white           : #ffffff,
+        red             : #EF4945,
+        grey            : #B4B4B4,
+        greyLight       : #E1E1E1,
+        greyLighter     : #E6E6E6,
+        greyLightest    : #F4F4F4,
+        greyDark        : #333333,
+        purple          : #36235F,
+        purpleMedium    : #592DAD,
+        purpleLight     : #835CD2,
+        purpleLighter   : #651A73,
+        green           : #6DD400,
+);
+
+//---------------------------------------------------------
+// Breakpoints
+//---------------------------------------------------------
+// set 'Name' and 'Value' to use media-querie mixin
+//
+// Example:
+// input: @include media-query('name')
+// output:
+
+$breakpoints: (
+        "desktop"	"screen and (max-width: 1600px)",
+        "desktop-small"	"screen and (max-width: 1279px)",
+        "tablet-landscape"	"screen and (max-width: 991px)",
+        "tablet"	"screen and (max-width: 767px)",
+        "phablet"	"screen and (max-width: 639px)",
+        "phone-large"	"screen and (max-width: 550px)",
+        "phone"		"screen and (max-width: 420px)"
+);
+
+
+//---------------------------------------------------------
+// Paths
+//---------------------------------------------------------
+
+$images-base-path: "/images/";
+$fonts-base-path: "/fonts/";

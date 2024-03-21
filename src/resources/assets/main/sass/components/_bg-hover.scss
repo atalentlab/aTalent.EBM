@@ -1,0 +1,28 @@
+#hoverMoveContainer {
+  perspective: 20vw;
+  @include media-query('tablet-landscape'){
+    perspective: 100vw;
+  }
+}
+
+#hoverMoveContainer__inner {
+  max-width: 1600px;
+  width: calc(100vw);
+  height: calc(100vh);
+  background-color: white;
+  //box-shadow: 2px 2px 50px rgba(255, 255, 255, 0.2);
+  transition: transform 0.5s;
+  -webkit-transition: transform 0.5s;
+  -moz-transition: transform 0.5s;
+  -o-transition: transform 0.5s;
+  @include media-query('tablet'){
+    height: auto;
+    padding-bottom: 100px;
+  }
+}
+
+.main-bg{
+  position: absolute;
+  top:0;
+  left: 0;
+}

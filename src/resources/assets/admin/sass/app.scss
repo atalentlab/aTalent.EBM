@@ -1,0 +1,22 @@
+// Fonts
+@import "~source-sans-pro/source-sans-pro.css";
+
+// Tabler
+@import '~tabler-ui/src/assets/scss/variables';
+@import '~bootstrap/scss/bootstrap';
+@import '~tabler-ui/src/assets/scss/dashboard/dashboard';
+
+// Settings
+@import "settings/variables";
+
+// Components
+@import "components/datatables";
+@import "components/form";
+@import "components/card";
+@import "components/hr";
+@import "components/nestable";
+@import "components/avatar";
+@import "components/ribbons";
+@import "components/page";
+@import "components/border";
+@import "components/modal";

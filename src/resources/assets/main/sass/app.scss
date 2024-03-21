@@ -1,0 +1,42 @@
+
+
+
+//settings
+@import "settings/settings.project";
+
+//tools
+@import "tools/tools.mixins";
+@import "tools/tools.functions";
+
+//base
+@import "base/base";
+@import "base/base.font";
+
+//layout
+//@import "layout/layout.reset";
+@import "layout/layout.grid";
+@import "layout/layout.utils";
+
+
+//components
+@import "components/component.animations";
+@import "components/component.anime-custom";
+@import "components/component.icon";
+@import "components/component.typography";
+@import "components/component.button";
+@import "components/component.header";
+@import "components/component.tabs";
+@import "components/component.bg-layers";
+@import "components/bg-hover";
+@import "components/component.contact-form";
+@import "components/component.dots";
+@import "components/component.table";
+@import "components/component.lightbox";
+@import "components/component.tooltip";
+
+//vendor
+@import "vendor/slick/slick";
+
+
+//pages
+@import "page/page.page";

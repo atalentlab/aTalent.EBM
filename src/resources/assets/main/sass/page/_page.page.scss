@@ -1,0 +1,204 @@
+
+.l-main-container{
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  min-height: 100vh;
+  height: auto;
+  position: relative;
+  //overflow-x: hidden;
+  &:before{
+    box-sizing: border-box;
+  }
+}
+
+
+.bg-home{
+  background-image: url("/images/backgrounds/srm-social-recruitment-monitor-header-image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  &:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1));
+
+  }
+
+}
+
+main{
+  //height: calc(100% - 600px);
+  overflow: hidden;
+  padding-top: calc(100vh - (100vh - 600px));
+  width: 100%;
+  //display: inline-block;
+  //margin-bottom: calc(600px - 100vh);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  @include media-query('tablet'){
+    height: auto;
+    padding-top: 100vh;
+  }
+}
+
+.header-title-section{
+  max-width: 1000px;
+  display: inline-block;
+  @include media-query('tablet'){
+    margin-bottom: 20px;
+  }
+
+  .description{
+    @include media-query('tablet'){
+      @include flex-font-size(12px, 1.4);
+      text-align: justify;
+
+      .zh &{
+        @include flex-font-size(14px, 1.4);
+        text-align: center;
+
+      }
+    }
+  }
+}
+
+.content-container{
+  position: relative;
+//transform: translateY(calc(-100vh + 600px));
+  @include media-query('tablet'){
+    margin-top: 90px;
+  }
+}
+
+.container-position-fix{
+  transform: translateY(0);
+}
+
+
+footer{
+  width: 100%;
+  bottom:0;
+  left: 0;
+  position: relative;
+  //@include media-query('tablet'){
+  //  position: relative;
+  //}
+}
+
+
+.footer-social-container {
+  padding-right: 30px;
+  position: absolute;
+  top: -40px;
+  right: 52px;
+  z-index: 1;
+  width: 165px;
+  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  @include media-query('tablet-landscape'){
+    right: 15px;
+  }
+
+  .footer-social-icon{
+    padding: 0;
+   a {
+     transition: transform 0.3s;
+     display: inline-block;
+      &:hover{
+      transform: scale(1.2);
+      }
+   }
+    .icon-wechat{
+      font-size: 50px;
+      //padding-top: 5px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .icon-weibo{
+      font-size: 56px;
+      display: inline-block;
+      margin-top: 7px;
+    }
+    .icon-twitter{
+      font-size: 50px;
+    }
+  }
+}
+
+.pre-footer{
+  width: 100%;
+  bottom:0;
+  left: 0;
+  padding: 50px 0;
+  background-color: color(red);
+  overflow: hidden;
+  text-align: center;
+  @include media-query('tablet'){
+    background-color: transparent;
+    padding: 0 0 50px;
+  }
+
+  .footer-social{
+    .icon-weibo {
+      font-size: 50px;
+      display: inline-block;
+     // margin-top: -5px;
+    }
+    .icon-wechat{
+      display: inline-block;
+      font-size: 45px;
+      margin-top: 5px;
+    }
+  }
+
+}
+
+
+.left-overlay-circle{
+  position: absolute;
+  width: 100%;
+  height: 800px;
+  border-radius: 50%;
+  -webkit-transform: translate3d(-20%, -50%, 0);
+  transform: translate3d(-51%, -30%, 0);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+
+.loading-section{
+  margin: 0 0 1em;
+  width: 100%;
+  text-align: center !important;
+  padding: 1em;
+  margin: 0 auto 1em;
+  display: inline-block;
+  vertical-align: top;
+}
+
+
+//TODO:- fix in right way mo
+@include media-query('tablet') {
+  #about-srm {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  #contact-form{
+    margin-top: -40px;
+  }
+
+}
+
+.banner-title {
+
+  &:lang(zh){
+    letter-spacing: 2px;
+  }
+}

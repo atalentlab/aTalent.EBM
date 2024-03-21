@@ -1,0 +1,53 @@
+//
+// Components - Modal
+// --------------------------------------------------
+
+//
+// Loader
+// --------------------------------------------------
+
+
+.modal {
+    &[data-loading="true"] {
+        .modal-dialog {
+            &:before {
+                opacity: 1;
+                z-index: 100;
+                width: 100%;
+                height: 100%;
+                pointer-events: auto;
+                transition: 0s width, 0s height, 0s z-index, .3s opacity;
+            }
+
+            .loader {
+                display: block;
+            }
+        }
+    }
+
+    .modal-dialog {
+        position: relative;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            width: 0;
+            height: 0;
+            z-index: -1;
+            background: rgba(255, 255, 255, 0.4);
+            transition: 0s .3s width, 0s .3s height, 0s .3s z-index, .3s opacity;
+        }
+
+        .loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            z-index: 100;
+        }
+    }
+}

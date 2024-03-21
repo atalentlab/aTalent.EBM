@@ -1,0 +1,41 @@
+.tooltip {
+  position: absolute;
+  display: inline-block;
+  color: color(grey);
+  cursor: pointer;
+  font-size: 16px;
+  top: -13px;
+  left: 0;
+
+  .tooltip-text {
+
+    visibility: hidden;
+    width: 250px;
+    background-color: rgba(50,50,50,0.8);
+    color: color(white);
+    text-align: left;
+    padding: 5px 15px;
+    border-radius: 4px;
+    position: absolute;
+    top: calc(100% + 5px);
+    margin-left: -5px;
+    z-index: 5;
+    @include flex-font-size(11px, 1.4);
+    font-family: $font-avenir;
+
+    &.right{
+      right: 50%;
+    }
+
+    &.left{
+      left: 100%;
+    }
+  }
+
+  &:hover{
+    color: color(greyDark);
+    .tooltip-text {
+      visibility: visible;
+    }
+  }
+}

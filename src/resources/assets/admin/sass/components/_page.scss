@@ -1,0 +1,24 @@
+//
+// Components - Page
+// --------------------------------------------------
+
+//
+// Header
+// --------------------------------------------------
+
+.header-fixed-offset {
+    margin-top: 85px;
+}
+
+.page-header-sticky {
+    position: sticky;
+    top: 85px;
+    z-index: 1;
+}
+
+.tooltip-toggle {
+    position: absolute;
+    top: 0px;
+    right: -20px;
+    font-size: 16px;
+}

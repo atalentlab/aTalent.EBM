@@ -1,0 +1,48 @@
+# Continuous  Deployment Script
+
+definitions:
+  steps:
+    - step: &Test-step
+        name: Test
+        image: phpunit/phpunit:6.5.3
+        script:
+          - cd 'src/'
+          - php -r "file_exists('.env') || copy('.env.example', '.env');"
+          - composer install
+          - php artisan key:generate
+          - mkdir -p bootstrap/cache
+          - mkdir -p storage
+          - mkdir -p storage/framework
+          - mkdir -p storage/framework/sessions
+          - mkdir -p storage/framework/views
+          - mkdir -p storage/framework/cache
+          - vendor/bin/phpunit --verbose
+
+pipelines:
+  #default:
+    #- step: *Test-step
+
+  branches:
+    develop:
+      #- step: *Test-step
+      - step:
+          name: Deploy to staging
+          image: atlassian/default-image:latest
+          trigger: automatic # Put to manual for non-automatic deployments
+          deployment: staging
+          script:
+            # DO NOT FORGET ADD STAGING SERVER SSH KEY TO PROJECT KEY
+            - deployment/staging/deploy.sh
+            #- scripts/generate_api_docs.sh
+#    master:
+#      #- step: *Test-step
+#      - step:
+#          name: Deploy to production
+#          image: atlassian/default-image:latest
+#          trigger: automatic # Put to manual for non-automatic deployments
+#          deployment: production
+#          script:
+#            # DO NOT FORGET ADD PRODUCTION SERVER SSH KEY TO PROJECT KEY
+#            - deployment/staging/deploy.sh
+#            # - scripts/generate_api_docs.sh
+#            #-  deployment/production/notify-sentry-of-release.bash

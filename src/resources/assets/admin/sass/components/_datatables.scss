@@ -1,0 +1,107 @@
+//
+// Components - Datatables customizations
+// --------------------------------------------------
+
+// Custom dropdown filter on top of table
+.dataTables_filter {
+    select {
+        display: inline-block;
+        width: auto;
+    }
+
+    select, input {
+        margin-left: 5px;
+    }
+
+    label {
+        margin-bottom: 0;
+    }
+}
+
+.dataTables_wrapper {
+    .dataTables_filter {
+        float: left;
+    }
+}
+
+// Proper loading icon
+.table-responsive {
+    position: relative;
+}
+
+.dataTables_processing {
+    visibility: hidden;
+
+    &:before {
+        visibility: visible;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: rotation 1.2s infinite linear;
+        font-size: 24px;
+    }
+
+
+    @extend .fe;
+    @extend .fe-loader;
+}
+
+@keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+
+.text-grey__light{
+    color: $grey-light;
+}
+
+.text-grey__lighter{
+    color: $grey-lighter;
+}
+
+.table-metrics {
+    border-bottom: 1px solid rgba(0, 40, 100, 0.12);
+
+    tr {
+        td:first-child, th:first-child {
+            border-right: 1px solid rgba(0, 40, 100, 0.12);
+            width: 1%;
+        }
+
+        td.actions, th.actions {
+            width: 1%;
+            text-align: right;
+        }
+    }
+
+    tr {
+        transition: background-color .3s;
+
+        &:not(.selected, .no-hover) {
+            cursor: pointer;
+        }
+
+        &:not(.selected, .no-hover):hover {
+            background-color: rgba(0, 40, 100, 0.05);
+        }
+
+        &.selected {
+            background-color: rgba(0, 40, 100, 0.12);
+        }
+    }
+}
+
+// sorting icons position fix
+.dataTables_wrapper thead .sorting {
+    &:before, &:after {
+        right: 10px;
+    }
+}

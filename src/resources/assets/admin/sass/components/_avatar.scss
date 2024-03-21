@@ -1,0 +1,23 @@
+//
+// Components - Avatar
+// --------------------------------------------------
+
+.avatar {
+    text-decoration: none !important;
+}
+
+.avatar-transparent {
+    background-color: transparent;
+}
+
+.avatar-contain {
+    background-size: contain;
+}
+
+a.avatar {
+    transition: opacity .3s;
+    
+    &:hover {
+        opacity: .7;
+    }
+}

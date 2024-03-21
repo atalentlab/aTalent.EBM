@@ -1,0 +1,66 @@
+//html[lang="zh-cn"]{
+//  //font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif !important;
+//}
+
+html{
+  font-family: $font-avenir;
+}
+
+body {
+  //@include font-smoothing(antialiased);
+  //word-break: keep-all;
+  //word-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  background: color(black);
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @include flex-font-size(14px, 1.6);
+  @include media-query('tablet') {
+    @include flex-font-size(12px, 1.6);
+  }
+
+  .zh {
+    @include flex-font-size(16px, 1.6);
+    @include media-query('tablet') {
+      @include flex-font-size(14px, 1.6);
+    }
+  }
+
+  &.no-scroll{
+    overflow: hidden;
+  }
+}
+
+*,
+:after,
+:before{
+  box-sizing: border-box;
+}
+
+
+ul{
+  list-style-type: square;
+}
+
+button,
+input[type="submit"] {
+  border: 0;
+  -webkit-appearance: none; /* Remove -webkit default styling  */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+  padding: 0;
+}

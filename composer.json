@@ -1,0 +1,24 @@
+{
+    "name": "maximumadvertising/laravel-boilerplate",
+    "description": "Laravel 5 Boilerplate With Docker",
+    "homepage": "https://github.com/MaximumAdvertising/laravel-boilerplate",
+    "license": "MIT",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Anar Bayramov",
+            "email": "anr.bayramov@gmail.com"
+        },
+        {
+            "name": "Jonas Van Assche",
+            "email": "jonas.van.assche@maximum.com"
+        }
+    ],
+    "require": {
+        "php": "^7.1.3"
+    },
+    "prefer-stable": true,
+    "config": {
+        "vendor-dir": "src/vendor"
+    }
+}
